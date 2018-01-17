@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		504DFE3C200F26BF006ACCE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE3B200F26BF006ACCE3 /* AppDelegate.swift */; };
+		504DFE3E200F26BF006ACCE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE3D200F26BF006ACCE3 /* ViewController.swift */; };
+		504DFE41200F26BF006ACCE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504DFE3F200F26BF006ACCE3 /* Main.storyboard */; };
+		504DFE43200F26BF006ACCE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504DFE42200F26BF006ACCE3 /* Assets.xcassets */; };
+		504DFE46200F26BF006ACCE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504DFE44200F26BF006ACCE3 /* LaunchScreen.storyboard */; };
+		504DFE51200F26BF006ACCE3 /* ZQLVideoCompressorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE50200F26BF006ACCE3 /* ZQLVideoCompressorTests.swift */; };
+		504DFE5C200F26C0006ACCE3 /* ZQLVideoCompressorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE5B200F26C0006ACCE3 /* ZQLVideoCompressorUITests.swift */; };
+		504DFE6B200F26F0006ACCE3 /* ZQLVideoCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE6A200F26F0006ACCE3 /* ZQLVideoCompressor.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		504DFE4D200F26BF006ACCE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 504DFE30200F26BF006ACCE3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 504DFE37200F26BF006ACCE3;
+			remoteInfo = ZQLVideoCompressor;
+		};
+		504DFE58200F26C0006ACCE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 504DFE30200F26BF006ACCE3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 504DFE37200F26BF006ACCE3;
+			remoteInfo = ZQLVideoCompressor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		504DFE38200F26BF006ACCE3 /* ZQLVideoCompressor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZQLVideoCompressor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		504DFE3B200F26BF006ACCE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		504DFE3D200F26BF006ACCE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		504DFE40200F26BF006ACCE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		504DFE42200F26BF006ACCE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		504DFE45200F26BF006ACCE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		504DFE47200F26BF006ACCE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		504DFE4C200F26BF006ACCE3 /* ZQLVideoCompressorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZQLVideoCompressorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		504DFE50200F26BF006ACCE3 /* ZQLVideoCompressorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQLVideoCompressorTests.swift; sourceTree = "<group>"; };
+		504DFE52200F26C0006ACCE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		504DFE57200F26C0006ACCE3 /* ZQLVideoCompressorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZQLVideoCompressorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		504DFE5B200F26C0006ACCE3 /* ZQLVideoCompressorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQLVideoCompressorUITests.swift; sourceTree = "<group>"; };
+		504DFE5D200F26C0006ACCE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		504DFE6A200F26F0006ACCE3 /* ZQLVideoCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQLVideoCompressor.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		504DFE35200F26BF006ACCE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		504DFE49200F26BF006ACCE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		504DFE54200F26C0006ACCE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		504DFE2F200F26BF006ACCE3 = {
+			isa = PBXGroup;
+			children = (
+				504DFE3A200F26BF006ACCE3 /* ZQLVideoCompressor */,
+				504DFE4F200F26BF006ACCE3 /* ZQLVideoCompressorTests */,
+				504DFE5A200F26C0006ACCE3 /* ZQLVideoCompressorUITests */,
+				504DFE39200F26BF006ACCE3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		504DFE39200F26BF006ACCE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				504DFE38200F26BF006ACCE3 /* ZQLVideoCompressor.app */,
+				504DFE4C200F26BF006ACCE3 /* ZQLVideoCompressorTests.xctest */,
+				504DFE57200F26C0006ACCE3 /* ZQLVideoCompressorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		504DFE3A200F26BF006ACCE3 /* ZQLVideoCompressor */ = {
+			isa = PBXGroup;
+			children = (
+				504DFE69200F26CB006ACCE3 /* Source */,
+				504DFE3B200F26BF006ACCE3 /* AppDelegate.swift */,
+				504DFE3D200F26BF006ACCE3 /* ViewController.swift */,
+				504DFE3F200F26BF006ACCE3 /* Main.storyboard */,
+				504DFE42200F26BF006ACCE3 /* Assets.xcassets */,
+				504DFE44200F26BF006ACCE3 /* LaunchScreen.storyboard */,
+				504DFE47200F26BF006ACCE3 /* Info.plist */,
+			);
+			path = ZQLVideoCompressor;
+			sourceTree = "<group>";
+		};
+		504DFE4F200F26BF006ACCE3 /* ZQLVideoCompressorTests */ = {
+			isa = PBXGroup;
+			children = (
+				504DFE50200F26BF006ACCE3 /* ZQLVideoCompressorTests.swift */,
+				504DFE52200F26C0006ACCE3 /* Info.plist */,
+			);
+			path = ZQLVideoCompressorTests;
+			sourceTree = "<group>";
+		};
+		504DFE5A200F26C0006ACCE3 /* ZQLVideoCompressorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				504DFE5B200F26C0006ACCE3 /* ZQLVideoCompressorUITests.swift */,
+				504DFE5D200F26C0006ACCE3 /* Info.plist */,
+			);
+			path = ZQLVideoCompressorUITests;
+			sourceTree = "<group>";
+		};
+		504DFE69200F26CB006ACCE3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				504DFE6A200F26F0006ACCE3 /* ZQLVideoCompressor.swift */,
+			);
+			path = Source;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		504DFE37200F26BF006ACCE3 /* ZQLVideoCompressor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 504DFE60200F26C0006ACCE3 /* Build configuration list for PBXNativeTarget "ZQLVideoCompressor" */;
+			buildPhases = (
+				504DFE34200F26BF006ACCE3 /* Sources */,
+				504DFE35200F26BF006ACCE3 /* Frameworks */,
+				504DFE36200F26BF006ACCE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZQLVideoCompressor;
+			productName = ZQLVideoCompressor;
+			productReference = 504DFE38200F26BF006ACCE3 /* ZQLVideoCompressor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		504DFE4B200F26BF006ACCE3 /* ZQLVideoCompressorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 504DFE63200F26C0006ACCE3 /* Build configuration list for PBXNativeTarget "ZQLVideoCompressorTests" */;
+			buildPhases = (
+				504DFE48200F26BF006ACCE3 /* Sources */,
+				504DFE49200F26BF006ACCE3 /* Frameworks */,
+				504DFE4A200F26BF006ACCE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				504DFE4E200F26BF006ACCE3 /* PBXTargetDependency */,
+			);
+			name = ZQLVideoCompressorTests;
+			productName = ZQLVideoCompressorTests;
+			productReference = 504DFE4C200F26BF006ACCE3 /* ZQLVideoCompressorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		504DFE56200F26C0006ACCE3 /* ZQLVideoCompressorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 504DFE66200F26C0006ACCE3 /* Build configuration list for PBXNativeTarget "ZQLVideoCompressorUITests" */;
+			buildPhases = (
+				504DFE53200F26C0006ACCE3 /* Sources */,
+				504DFE54200F26C0006ACCE3 /* Frameworks */,
+				504DFE55200F26C0006ACCE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				504DFE59200F26C0006ACCE3 /* PBXTargetDependency */,
+			);
+			name = ZQLVideoCompressorUITests;
+			productName = ZQLVideoCompressorUITests;
+			productReference = 504DFE57200F26C0006ACCE3 /* ZQLVideoCompressorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		504DFE30200F26BF006ACCE3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Qilong Zang";
+				TargetAttributes = {
+					504DFE37200F26BF006ACCE3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					504DFE4B200F26BF006ACCE3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 504DFE37200F26BF006ACCE3;
+					};
+					504DFE56200F26C0006ACCE3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 504DFE37200F26BF006ACCE3;
+					};
+				};
+			};
+			buildConfigurationList = 504DFE33200F26BF006ACCE3 /* Build configuration list for PBXProject "ZQLVideoCompressor" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 504DFE2F200F26BF006ACCE3;
+			productRefGroup = 504DFE39200F26BF006ACCE3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				504DFE37200F26BF006ACCE3 /* ZQLVideoCompressor */,
+				504DFE4B200F26BF006ACCE3 /* ZQLVideoCompressorTests */,
+				504DFE56200F26C0006ACCE3 /* ZQLVideoCompressorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		504DFE36200F26BF006ACCE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				504DFE46200F26BF006ACCE3 /* LaunchScreen.storyboard in Resources */,
+				504DFE43200F26BF006ACCE3 /* Assets.xcassets in Resources */,
+				504DFE41200F26BF006ACCE3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		504DFE4A200F26BF006ACCE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		504DFE55200F26C0006ACCE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		504DFE34200F26BF006ACCE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				504DFE3E200F26BF006ACCE3 /* ViewController.swift in Sources */,
+				504DFE3C200F26BF006ACCE3 /* AppDelegate.swift in Sources */,
+				504DFE6B200F26F0006ACCE3 /* ZQLVideoCompressor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		504DFE48200F26BF006ACCE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				504DFE51200F26BF006ACCE3 /* ZQLVideoCompressorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		504DFE53200F26C0006ACCE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				504DFE5C200F26C0006ACCE3 /* ZQLVideoCompressorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		504DFE4E200F26BF006ACCE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 504DFE37200F26BF006ACCE3 /* ZQLVideoCompressor */;
+			targetProxy = 504DFE4D200F26BF006ACCE3 /* PBXContainerItemProxy */;
+		};
+		504DFE59200F26C0006ACCE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 504DFE37200F26BF006ACCE3 /* ZQLVideoCompressor */;
+			targetProxy = 504DFE58200F26C0006ACCE3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		504DFE3F200F26BF006ACCE3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				504DFE40200F26BF006ACCE3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		504DFE44200F26BF006ACCE3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				504DFE45200F26BF006ACCE3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		504DFE5E200F26C0006ACCE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		504DFE5F200F26C0006ACCE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		504DFE61200F26C0006ACCE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XDGAK6XCMW;
+				INFOPLIST_FILE = ZQLVideoCompressor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zangqilong.ZQLVideoCompressor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		504DFE62200F26C0006ACCE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XDGAK6XCMW;
+				INFOPLIST_FILE = ZQLVideoCompressor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zangqilong.ZQLVideoCompressor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		504DFE64200F26C0006ACCE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XDGAK6XCMW;
+				INFOPLIST_FILE = ZQLVideoCompressorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zangqilong.ZQLVideoCompressorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZQLVideoCompressor.app/ZQLVideoCompressor";
+			};
+			name = Debug;
+		};
+		504DFE65200F26C0006ACCE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XDGAK6XCMW;
+				INFOPLIST_FILE = ZQLVideoCompressorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zangqilong.ZQLVideoCompressorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZQLVideoCompressor.app/ZQLVideoCompressor";
+			};
+			name = Release;
+		};
+		504DFE67200F26C0006ACCE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XDGAK6XCMW;
+				INFOPLIST_FILE = ZQLVideoCompressorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zangqilong.ZQLVideoCompressorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZQLVideoCompressor;
+			};
+			name = Debug;
+		};
+		504DFE68200F26C0006ACCE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XDGAK6XCMW;
+				INFOPLIST_FILE = ZQLVideoCompressorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zangqilong.ZQLVideoCompressorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZQLVideoCompressor;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		504DFE33200F26BF006ACCE3 /* Build configuration list for PBXProject "ZQLVideoCompressor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				504DFE5E200F26C0006ACCE3 /* Debug */,
+				504DFE5F200F26C0006ACCE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		504DFE60200F26C0006ACCE3 /* Build configuration list for PBXNativeTarget "ZQLVideoCompressor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				504DFE61200F26C0006ACCE3 /* Debug */,
+				504DFE62200F26C0006ACCE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		504DFE63200F26C0006ACCE3 /* Build configuration list for PBXNativeTarget "ZQLVideoCompressorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				504DFE64200F26C0006ACCE3 /* Debug */,
+				504DFE65200F26C0006ACCE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		504DFE66200F26C0006ACCE3 /* Build configuration list for PBXNativeTarget "ZQLVideoCompressorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				504DFE67200F26C0006ACCE3 /* Debug */,
+				504DFE68200F26C0006ACCE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 504DFE30200F26BF006ACCE3 /* Project object */;
+}
