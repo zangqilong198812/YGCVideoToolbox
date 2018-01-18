@@ -64,10 +64,6 @@ class ZQLVideoCompressor: NSObject {
       throw CompressError.videoTrackNotFind
     }
 
-    guard let audioTrack = videoAsset.tracks(withMediaType: AVMediaType.audio).first else {
-      throw CompressError.audioTrackNotFind
-    }
-
     guard timeRange.validateTime(videoTime: videoAsset.duration) else {
       throw CompressError.timeSetNotCorrect
     }
@@ -100,11 +96,11 @@ class ZQLVideoCompressor: NSObject {
     }
 
 
-    let fitSize:CGSize
+    let fitRect:CGRect
     if isKeepAspectRatio {
-      fitSize = AVMakeRect(aspectRatio: videoNaturaSize, insideRect: CGRect(origin: CGPoint.zero, size: targetSize)).size
+      fitRect = AVMakeRect(aspectRatio: videoNaturaSize, insideRect: CGRect(origin: CGPoint.zero, size: targetSize))
     }else {
-      fitSize = targetSize
+      fitRect = CGRect(origin: CGPoint.zero, size: targetSize)
     }
 
     let mainInstruction = AVMutableVideoCompositionInstruction()
@@ -113,16 +109,16 @@ class ZQLVideoCompressor: NSObject {
 
     let finalTransform:CGAffineTransform
     if info.isPortrait {
-      
+      finalTransform = originTransform.concatenating(CGAffineTransform(scaleX: fitRect.width/videoNaturaSize.width, y: fitRect.height/videoNaturaSize.height)).concatenating(CGAffineTransform(translationX: fitRect.minX, y: fitRect.minY))
     }else {
-
+      finalTransform = originTransform.concatenating(CGAffineTransform(scaleX: fitRect.width/videoNaturaSize.width, y: fitRect.height/videoNaturaSize.height)).concatenating(CGAffineTransform(translationX: fitRect.minX, y: fitRect.minY))
     }
-    layerInstruction.setTransform(originTransform, at: beginTime)
+    layerInstruction.setTransform(finalTransform, at: beginTime)
     mainInstruction.layerInstructions = [layerInstruction]
 
     let videoComposition = AVMutableVideoComposition()
     videoComposition.frameDuration = CMTimeMake(1, 30)
-    videoComposition.renderSize = videoNaturaSize
+    videoComposition.renderSize = targetSize
     videoComposition.instructions = [mainInstruction]
 
 

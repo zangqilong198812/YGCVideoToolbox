@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    let path = Bundle.main.path(forResource: "IMG_0285", ofType: "MOV")
+    let path = Bundle.main.path(forResource: "horizon", ofType: "MOV")
     let tmp = NSTemporaryDirectory()
     let tempFile = tmp + "testvideo.mov"
     compressor = try! ZQLVideoCompressor(filePath: path!)
