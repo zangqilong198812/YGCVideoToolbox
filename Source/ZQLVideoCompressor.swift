@@ -107,50 +107,41 @@ class ZQLVideoCompressor: NSObject {
       fitSize = targetSize
     }
 
-    let compressComposition = AVMutableComposition()
-    let videoCompositionTrack = compressComposition.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: kCMPersistentTrackID_Invalid)
-    try videoCompositionTrack?.insertTimeRange(cropTimeRange, of: videoTrack, at: beginTime)
-    let audioCompositionTrack = compressComposition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)
-    try audioCompositionTrack?.insertTimeRange(cropTimeRange, of: audioTrack, at: beginTime)
-
-    let instruction = AVMutableVideoCompositionInstruction()
-    instruction.timeRange = cropTimeRange
+    let mainInstruction = AVMutableVideoCompositionInstruction()
+    mainInstruction.timeRange = cropTimeRange
     let layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
 
-    let concatTransform:CGAffineTransform
-    if info.isPortrait && info.orientation == .right {
-     // let rotateTransform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
-     // let scaleTransform = CGAffineTransform(scaleX: fitSize.width/videoNaturaSize.width, y: fitSize.height/videoNaturaSize.height)
-      concatTransform = originTransform.rotated(by: CGFloat.pi/2)
-    }else if info.isPortrait && info.orientation == .left {
-      let rotateTransform = CGAffineTransform(rotationAngle: -CGFloat.pi/2)
-      // let scaleTransform = CGAffineTransform(scaleX: fitSize.width/videoNaturaSize.width, y: fitSize.height/videoNaturaSize.height)
-      concatTransform = originTransform.concatenating(rotateTransform)
+    let finalTransform:CGAffineTransform
+    if info.isPortrait {
+      
     }else {
-      concatTransform = originTransform
+
     }
     layerInstruction.setTransform(originTransform, at: beginTime)
-    instruction.layerInstructions = [layerInstruction]
+    mainInstruction.layerInstructions = [layerInstruction]
 
     let videoComposition = AVMutableVideoComposition()
     videoComposition.frameDuration = CMTimeMake(1, 30)
-    videoComposition.renderSize = targetSize
-    videoComposition.instructions = [instruction]
+    videoComposition.renderSize = videoNaturaSize
+    videoComposition.instructions = [mainInstruction]
 
 
     if FileManager.default.fileExists(atPath: outputPath) {
       try FileManager.default.removeItem(atPath: outputPath)
     }
     let outputURL = URL(fileURLWithPath: outputPath)
-    let exporter = AVAssetExportSession(asset: compressComposition, presetName: AVAssetExportPresetHighestQuality)
-    exporter?.outputURL = outputURL
-    exporter?.outputFileType = AVFileType.mov
-    exporter?.shouldOptimizeForNetworkUse = false
-    exporter?.videoComposition = videoComposition
-    exporter?.exportAsynchronously(completionHandler: {
-      if exporter?.status == .failed {
+    guard let exporter = AVAssetExportSession(asset: self.videoAsset, presetName: AVAssetExportPresetHighestQuality) else{
+      print("generate export failed")
+      return
+    }
+    exporter.outputURL = outputURL
+    exporter.outputFileType = AVFileType.mov
+    exporter.shouldOptimizeForNetworkUse = false
+    exporter.videoComposition = videoComposition
+    exporter.exportAsynchronously(completionHandler: {
+      if exporter.status == .failed {
 
-      }else if exporter?.status == .completed {
+      }else if exporter.status == .completed {
 
       }
       PHPhotoLibrary.shared().performChanges({
@@ -183,4 +174,63 @@ extension ZQLVideoCompressor {
     }
     return (assetOrientation, isPortrait)
   }
+
+  fileprivate func videoCompositionInstructionForTrack(track: AVCompositionTrack, videoTrack: AVAssetTrack, targetSize:CGSize) -> AVMutableVideoCompositionLayerInstruction {
+    let instruction = AVMutableVideoCompositionLayerInstruction(assetTrack: track)
+
+    let transform = videoTrack.preferredTransform
+    let assetInfo = orientationFromTransform(transform: transform)
+
+    var scaleToFitRatio = targetSize.width / videoTrack.naturalSize.width
+    if assetInfo.isPortrait {
+      scaleToFitRatio = targetSize.width / videoTrack.naturalSize.height
+      let scaleFactor = CGAffineTransform(scaleX: scaleToFitRatio, y: scaleToFitRatio)
+
+      instruction.setTransform(videoTrack.preferredTransform.concatenating(scaleFactor), at: kCMTimeZero)
+    } else {
+      let scaleFactor = CGAffineTransform(scaleX: scaleToFitRatio, y: scaleToFitRatio)
+
+      var concat = videoTrack.preferredTransform.concatenating(scaleFactor).concatenating(CGAffineTransform(translationX: 0, y: targetSize.width/2))
+      if assetInfo.orientation == .down {
+        let fixUpsideDown = CGAffineTransform(rotationAngle: CGFloat.pi)
+        let yFix = videoTrack.naturalSize.height + targetSize.height
+        let centerFix = CGAffineTransform(translationX: videoTrack.naturalSize.width, y: yFix)
+        concat = fixUpsideDown.concatenating(centerFix).concatenating(scaleFactor)
+      }
+      instruction.setTransform(concat, at: kCMTimeZero)
+    }
+
+    return instruction
+  }
+
+  /*
+   func videoCompositionInstructionForTrack(track: AVCompositionTrack, asset: AVAsset) -> AVMutableVideoCompositionLayerInstruction {
+   let instruction = AVMutableVideoCompositionLayerInstruction(assetTrack: track)
+   let assetTrack = asset.tracksWithMediaType(AVMediaTypeVideo)[0]
+
+   let transform = assetTrack.preferredTransform
+   let assetInfo = orientationFromTransform(transform)
+
+   var scaleToFitRatio = UIScreen.mainScreen().bounds.width / assetTrack.naturalSize.width
+   if assetInfo.isPortrait {
+   scaleToFitRatio = UIScreen.mainScreen().bounds.width / assetTrack.naturalSize.height
+   let scaleFactor = CGAffineTransformMakeScale(scaleToFitRatio, scaleToFitRatio)
+   instruction.setTransform(CGAffineTransformConcat(assetTrack.preferredTransform, scaleFactor),
+   atTime: kCMTimeZero)
+   } else {
+   let scaleFactor = CGAffineTransformMakeScale(scaleToFitRatio, scaleToFitRatio)
+   var concat = CGAffineTransformConcat(CGAffineTransformConcat(assetTrack.preferredTransform, scaleFactor), CGAffineTransformMakeTranslation(0, UIScreen.mainScreen().bounds.width / 2))
+   if assetInfo.orientation == .Down {
+   let fixUpsideDown = CGAffineTransformMakeRotation(CGFloat(M_PI))
+   let windowBounds = UIScreen.mainScreen().bounds
+   let yFix = assetTrack.naturalSize.height + windowBounds.height
+   let centerFix = CGAffineTransformMakeTranslation(assetTrack.naturalSize.width, yFix)
+   concat = CGAffineTransformConcat(CGAffineTransformConcat(fixUpsideDown, centerFix), scaleFactor)
+   }
+   instruction.setTransform(concat, atTime: kCMTimeZero)
+   }
+
+   return instruction
+   }
+   */
 }

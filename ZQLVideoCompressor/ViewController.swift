@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     let path = Bundle.main.path(forResource: "IMG_0285", ofType: "MOV")
     let tmp = NSTemporaryDirectory()
-    let tempFile = tmp + "/testvideo.mov"
+    let tempFile = tmp + "testvideo.mov"
     compressor = try! ZQLVideoCompressor(filePath: path!)
     try! compressor.compressVideo(targetSize: CGSize(width: 500, height: 500), outputPath: tempFile)
   }
