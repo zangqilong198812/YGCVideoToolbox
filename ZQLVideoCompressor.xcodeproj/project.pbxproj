@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40F2C0D02010EF0C00577F3B /* talk.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 40F2C0CF2010EF0B00577F3B /* talk.MP4 */; };
+		40F2C0D12010EF4000577F3B /* talk.MP4 in Sources */ = {isa = PBXBuildFile; fileRef = 40F2C0CF2010EF0B00577F3B /* talk.MP4 */; };
 		504DFE3C200F26BF006ACCE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE3B200F26BF006ACCE3 /* AppDelegate.swift */; };
 		504DFE3E200F26BF006ACCE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE3D200F26BF006ACCE3 /* ViewController.swift */; };
 		504DFE41200F26BF006ACCE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504DFE3F200F26BF006ACCE3 /* Main.storyboard */; };
@@ -15,8 +17,6 @@
 		504DFE51200F26BF006ACCE3 /* ZQLVideoCompressorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE50200F26BF006ACCE3 /* ZQLVideoCompressorTests.swift */; };
 		504DFE5C200F26C0006ACCE3 /* ZQLVideoCompressorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE5B200F26C0006ACCE3 /* ZQLVideoCompressorUITests.swift */; };
 		504DFE6B200F26F0006ACCE3 /* ZQLVideoCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE6A200F26F0006ACCE3 /* ZQLVideoCompressor.swift */; };
-		50C0F9E720106A6800443AB3 /* IMG_0285.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 50C0F9E620106A6800443AB3 /* IMG_0285.MOV */; };
-		50C0F9EE2010995900443AB3 /* horizon.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 50C0F9ED2010995900443AB3 /* horizon.MOV */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40F2C0CF2010EF0B00577F3B /* talk.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = talk.MP4; sourceTree = "<group>"; };
 		504DFE38200F26BF006ACCE3 /* ZQLVideoCompressor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZQLVideoCompressor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		504DFE3B200F26BF006ACCE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		504DFE3D200F26BF006ACCE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,8 +52,6 @@
 		504DFE5B200F26C0006ACCE3 /* ZQLVideoCompressorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQLVideoCompressorUITests.swift; sourceTree = "<group>"; };
 		504DFE5D200F26C0006ACCE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		504DFE6A200F26F0006ACCE3 /* ZQLVideoCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQLVideoCompressor.swift; sourceTree = "<group>"; };
-		50C0F9E620106A6800443AB3 /* IMG_0285.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IMG_0285.MOV; sourceTree = "<group>"; };
-		50C0F9ED2010995900443AB3 /* horizon.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = horizon.MOV; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +134,7 @@
 		504DFE69200F26CB006ACCE3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				50C0F9ED2010995900443AB3 /* horizon.MOV */,
-				50C0F9E620106A6800443AB3 /* IMG_0285.MOV */,
+				40F2C0CF2010EF0B00577F3B /* talk.MP4 */,
 				504DFE6A200F26F0006ACCE3 /* ZQLVideoCompressor.swift */,
 			);
 			path = Source;
@@ -249,11 +247,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50C0F9EE2010995900443AB3 /* horizon.MOV in Resources */,
 				504DFE46200F26BF006ACCE3 /* LaunchScreen.storyboard in Resources */,
 				504DFE43200F26BF006ACCE3 /* Assets.xcassets in Resources */,
 				504DFE41200F26BF006ACCE3 /* Main.storyboard in Resources */,
-				50C0F9E720106A6800443AB3 /* IMG_0285.MOV in Resources */,
+				40F2C0D02010EF0C00577F3B /* talk.MP4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +277,7 @@
 			files = (
 				504DFE3E200F26BF006ACCE3 /* ViewController.swift in Sources */,
 				504DFE3C200F26BF006ACCE3 /* AppDelegate.swift in Sources */,
+				40F2C0D12010EF4000577F3B /* talk.MP4 in Sources */,
 				504DFE6B200F26F0006ACCE3 /* ZQLVideoCompressor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

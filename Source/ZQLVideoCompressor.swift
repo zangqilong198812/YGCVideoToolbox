@@ -91,7 +91,7 @@ class ZQLVideoCompressor: NSObject {
     }else {
       videoNaturaSize = videoTrack.naturalSize
     }
-    if videoNaturaSize.width < targetSize.width || videoNaturaSize.height < targetSize.height {
+    if videoNaturaSize.width < targetSize.width && videoNaturaSize.height < targetSize.height {
       throw CompressError.targetSizeNotCorrect
     }
 
@@ -131,7 +131,7 @@ class ZQLVideoCompressor: NSObject {
       return
     }
     exporter.outputURL = outputURL
-    exporter.outputFileType = AVFileType.mov
+    exporter.outputFileType = AVFileType.mp4
     exporter.shouldOptimizeForNetworkUse = false
     exporter.videoComposition = videoComposition
     exporter.exportAsynchronously(completionHandler: {
