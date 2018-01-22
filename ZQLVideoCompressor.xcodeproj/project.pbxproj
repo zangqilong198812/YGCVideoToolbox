@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		40F2C0D02010EF0C00577F3B /* talk.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 40F2C0CF2010EF0B00577F3B /* talk.MP4 */; };
 		40F2C0D12010EF4000577F3B /* talk.MP4 in Sources */ = {isa = PBXBuildFile; fileRef = 40F2C0CF2010EF0B00577F3B /* talk.MP4 */; };
+		40F2C0D4201366B500577F3B /* cat.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 40F2C0D3201366B500577F3B /* cat.MOV */; };
+		40F2C0D620136A5000577F3B /* YGCSlowMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F2C0D520136A5000577F3B /* YGCSlowMotion.swift */; };
+		40F2C0D820136A9B00577F3B /* YGCVideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F2C0D720136A9B00577F3B /* YGCVideoHelper.swift */; };
+		40F2C0DA20136AE000577F3B /* YGCResizeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F2C0D920136AE000577F3B /* YGCResizeVideo.swift */; };
 		504DFE3C200F26BF006ACCE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE3B200F26BF006ACCE3 /* AppDelegate.swift */; };
 		504DFE3E200F26BF006ACCE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE3D200F26BF006ACCE3 /* ViewController.swift */; };
 		504DFE41200F26BF006ACCE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504DFE3F200F26BF006ACCE3 /* Main.storyboard */; };
@@ -16,7 +20,6 @@
 		504DFE46200F26BF006ACCE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504DFE44200F26BF006ACCE3 /* LaunchScreen.storyboard */; };
 		504DFE51200F26BF006ACCE3 /* ZQLVideoCompressorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE50200F26BF006ACCE3 /* ZQLVideoCompressorTests.swift */; };
 		504DFE5C200F26C0006ACCE3 /* ZQLVideoCompressorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE5B200F26C0006ACCE3 /* ZQLVideoCompressorUITests.swift */; };
-		504DFE6B200F26F0006ACCE3 /* ZQLVideoCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE6A200F26F0006ACCE3 /* ZQLVideoCompressor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,10 @@
 
 /* Begin PBXFileReference section */
 		40F2C0CF2010EF0B00577F3B /* talk.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = talk.MP4; sourceTree = "<group>"; };
+		40F2C0D3201366B500577F3B /* cat.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = cat.MOV; sourceTree = "<group>"; };
+		40F2C0D520136A5000577F3B /* YGCSlowMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YGCSlowMotion.swift; sourceTree = "<group>"; };
+		40F2C0D720136A9B00577F3B /* YGCVideoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YGCVideoHelper.swift; sourceTree = "<group>"; };
+		40F2C0D920136AE000577F3B /* YGCResizeVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YGCResizeVideo.swift; sourceTree = "<group>"; };
 		504DFE38200F26BF006ACCE3 /* ZQLVideoCompressor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZQLVideoCompressor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		504DFE3B200F26BF006ACCE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		504DFE3D200F26BF006ACCE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +58,6 @@
 		504DFE57200F26C0006ACCE3 /* ZQLVideoCompressorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZQLVideoCompressorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		504DFE5B200F26C0006ACCE3 /* ZQLVideoCompressorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQLVideoCompressorUITests.swift; sourceTree = "<group>"; };
 		504DFE5D200F26C0006ACCE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		504DFE6A200F26F0006ACCE3 /* ZQLVideoCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQLVideoCompressor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,8 +140,11 @@
 		504DFE69200F26CB006ACCE3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				40F2C0D3201366B500577F3B /* cat.MOV */,
 				40F2C0CF2010EF0B00577F3B /* talk.MP4 */,
-				504DFE6A200F26F0006ACCE3 /* ZQLVideoCompressor.swift */,
+				40F2C0D920136AE000577F3B /* YGCResizeVideo.swift */,
+				40F2C0D520136A5000577F3B /* YGCSlowMotion.swift */,
+				40F2C0D720136A9B00577F3B /* YGCVideoHelper.swift */,
 			);
 			path = Source;
 			sourceTree = SOURCE_ROOT;
@@ -251,6 +260,7 @@
 				504DFE43200F26BF006ACCE3 /* Assets.xcassets in Resources */,
 				504DFE41200F26BF006ACCE3 /* Main.storyboard in Resources */,
 				40F2C0D02010EF0C00577F3B /* talk.MP4 in Resources */,
+				40F2C0D4201366B500577F3B /* cat.MOV in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,10 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40F2C0DA20136AE000577F3B /* YGCResizeVideo.swift in Sources */,
 				504DFE3E200F26BF006ACCE3 /* ViewController.swift in Sources */,
+				40F2C0D820136A9B00577F3B /* YGCVideoHelper.swift in Sources */,
 				504DFE3C200F26BF006ACCE3 /* AppDelegate.swift in Sources */,
 				40F2C0D12010EF4000577F3B /* talk.MP4 in Sources */,
-				504DFE6B200F26F0006ACCE3 /* ZQLVideoCompressor.swift in Sources */,
+				40F2C0D620136A5000577F3B /* YGCSlowMotion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,18 +7,17 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
-  var compressor:ZQLVideoCompressor!
-
   override func viewDidLoad() {
     super.viewDidLoad()
-    let path = Bundle.main.path(forResource: "talk", ofType: "MP4")
+    let path = Bundle.main.path(forResource: "cat", ofType: "MOV")
     let tmp = NSTemporaryDirectory()
     let tempFile = tmp + "testvideo.mov"
-    compressor = try! ZQLVideoCompressor(filePath: path!)
-    try! compressor.compressVideo(targetSize: CGSize(width: 500, height: 500), outputPath: tempFile)
+    let videoAsset = AVURLAsset(url: URL(fileURLWithPath: path!))
+    try! slowMotion(videoAsset: videoAsset, slowTimeRange: YGCTimeRange.secondsRange(2, 4), slowMotionRate: 10, outputPath: tempFile)
   }
 
   override func didReceiveMemoryWarning() {
