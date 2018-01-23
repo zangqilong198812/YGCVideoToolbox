@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     let tmp = NSTemporaryDirectory()
     let tempFile = tmp + "testvideo.mov"
     let videoAsset = AVURLAsset(url: URL(fileURLWithPath: path!))
-    try! slowMotion(videoAsset: videoAsset, slowTimeRange: YGCTimeRange.secondsRange(2, 4), slowMotionRate: 10, outputPath: tempFile)
+    try! slowMotion(videoAsset: videoAsset, slowTimeRange: YGCTimeRange.secondsRange(2, 4), slowMotionRate: 2, outputPath: tempFile)
   }
 
   override func didReceiveMemoryWarning() {

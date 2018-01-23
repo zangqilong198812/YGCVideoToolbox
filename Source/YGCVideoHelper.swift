@@ -90,6 +90,24 @@ public func videoCompositionInstructionForTrack(track: AVCompositionTrack, video
     return instruction
 }
 
+public func exportVideo(path:String, asset:AVAsset) {
+  let outputURL = URL(fileURLWithPath: path)
+  guard let exporter = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality) else{
+    print("generate export failed")
+    return
+  }
+  exporter.outputURL = outputURL
+  exporter.outputFileType = AVFileType.mp4
+  exporter.shouldOptimizeForNetworkUse = false
+  exporter.exportAsynchronously(completionHandler: {
+    if exporter.status == .completed {
+
+    }else {
+
+    }
+  })
+}
+
 public func saveVideoToLibrary(url:URL) {
     PHPhotoLibrary.shared().performChanges({
         PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: url)

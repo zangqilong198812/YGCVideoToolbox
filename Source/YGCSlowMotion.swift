@@ -50,16 +50,16 @@ public func slowMotion(videoAsset:AVURLAsset, slowTimeRange:YGCTimeRange, slowMo
     
     let subTractRange = CMTimeSubtract(slowMotionRange.end, slowMotionRange.start)
     let seconds = CMTimeGetSeconds(subTractRange)
-    compositionVideoTrack.scaleTimeRange(slowMotionRange, toDuration: CMTimeMake(subTractRange.value * CMTimeValue(slowMotionRate), subTractRange.timescale))
-    compostiionAudioTrack.scaleTimeRange(slowMotionRange, toDuration: CMTimeMake(subTractRange.value * CMTimeValue(slowMotionRate), subTractRange.timescale))
+    compositionVideoTrack.scaleTimeRange(slowMotionRange, toDuration: CMTimeMake(CMTimeValue(seconds) * CMTimeValue(slowMotionRate) * CMTimeValue(subTractRange.timescale), subTractRange.timescale))
+    compostiionAudioTrack.scaleTimeRange(slowMotionRange, toDuration: CMTimeMake(CMTimeValue(seconds) * CMTimeValue(slowMotionRate) * CMTimeValue(subTractRange.timescale), subTractRange.timescale))
     compositionVideoTrack.preferredTransform = videoTrack.preferredTransform
     
     if FileManager.default.fileExists(atPath: outputPath) {
         try FileManager.default.removeItem(atPath: outputPath)
     }
-    
+    print(outputPath)
     let outputURL = URL(fileURLWithPath: outputPath)
-    guard let exporter = AVAssetExportSession(asset: videoAsset, presetName: AVAssetExportPresetHighestQuality) else{
+    guard let exporter = AVAssetExportSession(asset: mixCompositin, presetName: AVAssetExportPresetHighestQuality) else{
         print("generate export failed")
         return
     }

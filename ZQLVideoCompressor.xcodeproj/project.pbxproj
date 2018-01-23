@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		40F2C0D02010EF0C00577F3B /* talk.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 40F2C0CF2010EF0B00577F3B /* talk.MP4 */; };
 		40F2C0D12010EF4000577F3B /* talk.MP4 in Sources */ = {isa = PBXBuildFile; fileRef = 40F2C0CF2010EF0B00577F3B /* talk.MP4 */; };
-		40F2C0D4201366B500577F3B /* cat.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 40F2C0D3201366B500577F3B /* cat.MOV */; };
 		40F2C0D620136A5000577F3B /* YGCSlowMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F2C0D520136A5000577F3B /* YGCSlowMotion.swift */; };
 		40F2C0D820136A9B00577F3B /* YGCVideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F2C0D720136A9B00577F3B /* YGCVideoHelper.swift */; };
 		40F2C0DA20136AE000577F3B /* YGCResizeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F2C0D920136AE000577F3B /* YGCResizeVideo.swift */; };
@@ -20,6 +19,8 @@
 		504DFE46200F26BF006ACCE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504DFE44200F26BF006ACCE3 /* LaunchScreen.storyboard */; };
 		504DFE51200F26BF006ACCE3 /* ZQLVideoCompressorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE50200F26BF006ACCE3 /* ZQLVideoCompressorTests.swift */; };
 		504DFE5C200F26C0006ACCE3 /* ZQLVideoCompressorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504DFE5B200F26C0006ACCE3 /* ZQLVideoCompressorUITests.swift */; };
+		50C637042016DEA100B6FDDD /* cat.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 50C637032016DEA100B6FDDD /* cat.MOV */; };
+		50C637062016DF6800B6FDDD /* YGCRepeatSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C637052016DF6800B6FDDD /* YGCRepeatSegment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,6 @@
 
 /* Begin PBXFileReference section */
 		40F2C0CF2010EF0B00577F3B /* talk.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = talk.MP4; sourceTree = "<group>"; };
-		40F2C0D3201366B500577F3B /* cat.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = cat.MOV; sourceTree = "<group>"; };
 		40F2C0D520136A5000577F3B /* YGCSlowMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YGCSlowMotion.swift; sourceTree = "<group>"; };
 		40F2C0D720136A9B00577F3B /* YGCVideoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YGCVideoHelper.swift; sourceTree = "<group>"; };
 		40F2C0D920136AE000577F3B /* YGCResizeVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YGCResizeVideo.swift; sourceTree = "<group>"; };
@@ -58,6 +58,8 @@
 		504DFE57200F26C0006ACCE3 /* ZQLVideoCompressorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZQLVideoCompressorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		504DFE5B200F26C0006ACCE3 /* ZQLVideoCompressorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQLVideoCompressorUITests.swift; sourceTree = "<group>"; };
 		504DFE5D200F26C0006ACCE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50C637032016DEA100B6FDDD /* cat.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = cat.MOV; sourceTree = "<group>"; };
+		50C637052016DF6800B6FDDD /* YGCRepeatSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YGCRepeatSegment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,10 +142,11 @@
 		504DFE69200F26CB006ACCE3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				40F2C0D3201366B500577F3B /* cat.MOV */,
 				40F2C0CF2010EF0B00577F3B /* talk.MP4 */,
+				50C637032016DEA100B6FDDD /* cat.MOV */,
 				40F2C0D920136AE000577F3B /* YGCResizeVideo.swift */,
 				40F2C0D520136A5000577F3B /* YGCSlowMotion.swift */,
+				50C637052016DF6800B6FDDD /* YGCRepeatSegment.swift */,
 				40F2C0D720136A9B00577F3B /* YGCVideoHelper.swift */,
 			);
 			path = Source;
@@ -260,7 +263,7 @@
 				504DFE43200F26BF006ACCE3 /* Assets.xcassets in Resources */,
 				504DFE41200F26BF006ACCE3 /* Main.storyboard in Resources */,
 				40F2C0D02010EF0C00577F3B /* talk.MP4 in Resources */,
-				40F2C0D4201366B500577F3B /* cat.MOV in Resources */,
+				50C637042016DEA100B6FDDD /* cat.MOV in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +293,7 @@
 				40F2C0D820136A9B00577F3B /* YGCVideoHelper.swift in Sources */,
 				504DFE3C200F26BF006ACCE3 /* AppDelegate.swift in Sources */,
 				40F2C0D12010EF4000577F3B /* talk.MP4 in Sources */,
+				50C637062016DF6800B6FDDD /* YGCRepeatSegment.swift in Sources */,
 				40F2C0D620136A5000577F3B /* YGCSlowMotion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
