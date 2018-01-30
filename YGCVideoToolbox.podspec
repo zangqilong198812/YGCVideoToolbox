@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'AVFoundation'
+  s.frameworks = 'AVFoundation', 'Photos'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
   # s.dependency 'AFNetworking', '~> 2.3'
 end
