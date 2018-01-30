@@ -1,0 +1,6 @@
+framework module YGCVideoToolbox {
+  umbrella header "YGCVideoToolbox-umbrella.h"
+
+  export *
+  module * { export * }
+}

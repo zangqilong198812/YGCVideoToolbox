@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'YGCVideoToolbox'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of YGCVideoToolbox.'
+  s.summary          = 'A toolbox to edit video.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,17 +18,17 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+                      YGCVideoToolbox is a collection of video edit function.Help you resize video, trim video and make some fantsy effect.
                        DESC
 
-  s.homepage         = 'https://github.com/zangqilong/YGCVideoToolbox'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/zangqilong198812/YGCVideoToolbox'
+  s.screenshots     = 'https://camo.githubusercontent.com/cfc03230e50baab26b79a1da7868182065e0a2c9/68747470733a2f2f7773312e73696e61696d672e636e2f6c617267652f303036744e633739677931666e706d676c3135726e6a33306a6730356b3075322e6a7067'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'zangqilong' => 'zangqilong@gmail.com' }
-  s.source           = { :git => 'https://github.com/zangqilong/YGCVideoToolbox.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/zangqilong198812/YGCVideoToolbox.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'YGCVideoToolbox/Classes/**/*'
   
@@ -37,6 +37,7 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'AVFoundation'
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
   # s.dependency 'AFNetworking', '~> 2.3'
 end
