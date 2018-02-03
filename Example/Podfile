@@ -1,0 +1,12 @@
+platform :ios, '10.0'
+use_frameworks!
+
+target 'YGCVideoToolbox_Example' do
+  pod 'YGCVideoToolbox', :path => '../'
+
+  target 'YGCVideoToolbox_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

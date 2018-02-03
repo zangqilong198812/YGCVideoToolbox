@@ -1,0 +1,6 @@
+framework module Pods_YGCVideoToolbox_Example {
+  umbrella header "Pods-YGCVideoToolbox_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

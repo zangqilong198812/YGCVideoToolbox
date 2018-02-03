@@ -1,0 +1,16 @@
+PODS:
+  - YGCVideoToolbox (0.1.0)
+
+DEPENDENCIES:
+  - YGCVideoToolbox (from `../`)
+
+EXTERNAL SOURCES:
+  YGCVideoToolbox:
+    :path: ../
+
+SPEC CHECKSUMS:
+  YGCVideoToolbox: eef7436c5faf43bdbe930a9d4ae156c3a621202d
+
+PODFILE CHECKSUM: 920177178e0663a167a8597f082a1fca0603ad05
+
+COCOAPODS: 1.3.1

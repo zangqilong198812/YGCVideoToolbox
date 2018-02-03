@@ -1,0 +1,30 @@
+{
+  "name": "YGCVideoToolbox",
+  "version": "0.1.0",
+  "summary": "A toolbox to edit video.",
+  "description": "YGCVideoToolbox is a collection of video edit function.Help you resize video, trim video and make some fantsy effect.",
+  "homepage": "https://github.com/zangqilong198812/YGCVideoToolbox",
+  "screenshots": "https://camo.githubusercontent.com/cfc03230e50baab26b79a1da7868182065e0a2c9/68747470733a2f2f7773312e73696e61696d672e636e2f6c617267652f303036744e633739677931666e706d676c3135726e6a33306a6730356b3075322e6a7067",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "zangqilong": "zangqilong@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/zangqilong198812/YGCVideoToolbox.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "YGCVideoToolbox/Classes/**/*",
+  "frameworks": [
+    "AVFoundation",
+    "Photos"
+  ],
+  "pod_target_xcconfig": {
+    "SWIFT_VERSION": "4.0"
+  }
+}

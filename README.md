@@ -11,7 +11,7 @@
 </a>
 </p>
 
-# YGCVideoToolbox 
+# YGCVideoToolbox
 
 A series of video tools base on AVFoundation framework.
 
