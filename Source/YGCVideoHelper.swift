@@ -90,8 +90,8 @@ public func videoCompositionInstructionForTrack(track: AVCompositionTrack, video
     return instruction
 }
 
-public func exportVideo(path:String, asset:AVAsset) {
-  let outputURL = URL(fileURLWithPath: path)
+public func exportVideo(outputPath:String, asset:AVAsset) {
+  let outputURL = URL(fileURLWithPath: outputPath)
   guard let exporter = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality) else{
     print("generate export failed")
     return

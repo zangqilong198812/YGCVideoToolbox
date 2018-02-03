@@ -13,8 +13,7 @@ public func resideVideo(videoAsset:AVURLAsset,
                         targetSize:CGSize,
                         timeRange:YGCTimeRange = .naturalRange,
                         isKeepAspectRatio:Bool,
-                        isCutBlackEdge:Bool,
-                        outputPath:String) throws
+                        isCutBlackEdge:Bool) throws -> AVMutableVideoComposition
 {
     guard let videoTrack = videoAsset.tracks(withMediaType: AVMediaType.video).first else{
         throw YGCVideoError.videoTrackNotFind
@@ -92,25 +91,5 @@ public func resideVideo(videoAsset:AVURLAsset,
     
     videoComposition.instructions = [mainInstruction]
     
-    
-    if FileManager.default.fileExists(atPath: outputPath) {
-        try FileManager.default.removeItem(atPath: outputPath)
-    }
-    let outputURL = URL(fileURLWithPath: outputPath)
-    guard let exporter = AVAssetExportSession(asset: videoAsset, presetName: AVAssetExportPresetHighestQuality) else{
-        print("generate export failed")
-        return
-    }
-    exporter.outputURL = outputURL
-    exporter.outputFileType = AVFileType.mp4
-    exporter.shouldOptimizeForNetworkUse = false
-    exporter.videoComposition = videoComposition
-    exporter.exportAsynchronously(completionHandler: {
-        if exporter.status == .completed {
-            
-        }else {
-            
-        }
-    })
-    
+    return videoComposition
 }

@@ -10,15 +10,30 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController {
+    
+    var composition:AVMutableComposition!
+    var player:AVPlayer!
+    var item:AVPlayerItem!
+    var playerLayer:AVPlayerLayer!
 
-  override func viewDidLoad() {
+    @IBOutlet weak var playButton: UIButton!
+    override func viewDidLoad() {
     super.viewDidLoad()
-    let path = Bundle.main.path(forResource: "cat", ofType: "MOV")
-    let tmp = NSTemporaryDirectory()
-    let tempFile = tmp + "testvideo.mov"
+    let path = Bundle.main.path(forResource: "self", ofType: "MP4")
     let videoAsset = AVURLAsset(url: URL(fileURLWithPath: path!))
-    try! slowMotion(videoAsset: videoAsset, slowTimeRange: YGCTimeRange.secondsRange(2, 4), slowMotionRate: 2, outputPath: tempFile)
+    composition = try! cutTime(videoAsset: videoAsset, cutTimeRange: YGCTimeRange.secondsRange(4, 5))
+    
+    item = AVPlayerItem(asset: composition)
+    player = AVPlayer(playerItem: item)
+    playerLayer = AVPlayerLayer.init(player: player)
+    playerLayer.frame = self.view.bounds
+    self.view.layer.addSublayer(playerLayer)
+    self.view.bringSubview(toFront: playButton)
   }
+    
+    @IBAction func playVideo() {
+        player.play()
+    }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()

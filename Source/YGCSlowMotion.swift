@@ -9,7 +9,10 @@
 import UIKit
 import AVFoundation
 
-public func slowMotion(videoAsset:AVURLAsset, slowTimeRange:YGCTimeRange, slowMotionRate:Int, outputPath:String) throws {
+public func slowMotion(videoAsset:AVURLAsset,
+                       slowTimeRange:YGCTimeRange,
+                       slowMotionRate:Int) throws -> AVMutableComposition
+{
     guard let videoTrack = videoAsset.tracks(withMediaType: AVMediaType.video).first else{
         throw YGCVideoError.videoTrackNotFind
     }
@@ -22,11 +25,11 @@ public func slowMotion(videoAsset:AVURLAsset, slowTimeRange:YGCTimeRange, slowMo
         throw YGCVideoError.timeSetNotCorrect
     }
     
-    let mixCompositin = AVMutableComposition(urlAssetInitializationOptions: nil)
-    guard let compositionVideoTrack = mixCompositin.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: kCMPersistentTrackID_Invalid) else {
+    let slowMotionCompositin = AVMutableComposition(urlAssetInitializationOptions: nil)
+    guard let compositionVideoTrack = slowMotionCompositin.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: kCMPersistentTrackID_Invalid) else {
         throw YGCVideoError.compositionTrackInitFailed
     }
-    guard let compostiionAudioTrack = mixCompositin.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid) else {
+    guard let compostiionAudioTrack = slowMotionCompositin.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid) else {
         throw YGCVideoError.compositionTrackInitFailed
     }
     
@@ -41,8 +44,8 @@ public func slowMotion(videoAsset:AVURLAsset, slowTimeRange:YGCTimeRange, slowMo
         slowMotionRange = CMTimeRangeMake(kCMTimeZero, videoAsset.duration)
         beginTime = kCMTimeZero
     case .secondsRange(let begin, let end):
-        beginTime = CMTimeMake(Int64(Double(videoTimeScale) * begin), videoTimeScale)
-        slowMotionRange = CMTimeRangeMake(beginTime, CMTimeMake(Int64(Double(videoTimeScale) * end), videoTimeScale))
+        beginTime = CMTimeMakeWithSeconds(begin, videoTimeScale)
+        slowMotionRange = CMTimeRangeMake(beginTime, CMTimeMakeWithSeconds(end, videoTimeScale))
     case .cmtimeRange(let begin, let end):
         beginTime = begin
         slowMotionRange = CMTimeRangeMake(begin, end)
@@ -54,23 +57,5 @@ public func slowMotion(videoAsset:AVURLAsset, slowTimeRange:YGCTimeRange, slowMo
     compostiionAudioTrack.scaleTimeRange(slowMotionRange, toDuration: CMTimeMake(CMTimeValue(seconds) * CMTimeValue(slowMotionRate) * CMTimeValue(subTractRange.timescale), subTractRange.timescale))
     compositionVideoTrack.preferredTransform = videoTrack.preferredTransform
     
-    if FileManager.default.fileExists(atPath: outputPath) {
-        try FileManager.default.removeItem(atPath: outputPath)
-    }
-    print(outputPath)
-    let outputURL = URL(fileURLWithPath: outputPath)
-    guard let exporter = AVAssetExportSession(asset: mixCompositin, presetName: AVAssetExportPresetHighestQuality) else{
-        print("generate export failed")
-        return
-    }
-    exporter.outputURL = outputURL
-    exporter.outputFileType = AVFileType.mp4
-    exporter.shouldOptimizeForNetworkUse = false
-    exporter.exportAsynchronously(completionHandler: {
-        if exporter.status == .completed {
-            
-        }else {
-            
-        }
-    })
+    return slowMotionCompositin
 }
