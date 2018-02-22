@@ -1,6 +1,0 @@
-use_frameworks!
-target 'YGCVideoToolbox_Tests' do
-  pod 'YGCVideoToolbox', :path => '../'
-  
-  
-end
