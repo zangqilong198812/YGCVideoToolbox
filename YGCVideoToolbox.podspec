@@ -21,17 +21,18 @@ Pod::Spec.new do |s|
                       A collection of video edit tool.make you slow motion, resize, crop, repeat video easily.
                        DESC
 
-  s.homepage         = 'https://github.com/zangqilong/YGCVideoToolbox'
+  s.homepage         = 'https://github.com/zangqilong198812/YGCVideoToolbox'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'zangqilong' => 'zangqilong@gmail.com' }
-  s.source           = { :git => 'https://github.com/zangqilong/YGCVideoToolbox.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/zangqilong198812/YGCVideoToolbox.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'YGCVideoToolbox/Classes/**/*'
-  s.frameworks = 'AVFoundation'
+  s.source_files = 'YGCVideoToolbox/Classes/*.swift'
+  s.frameworks = 'AVFoundation', 'Photos'
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
   # s.resource_bundles = {
   #   'YGCVideoToolbox' => ['YGCVideoToolbox/Assets/*.png']
   # }

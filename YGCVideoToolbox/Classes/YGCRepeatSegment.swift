@@ -7,8 +7,6 @@
 //
 
 import UIKit
-
-import UIKit
 import AVFoundation
 
 public func repeatVideo(videoAsset:AVURLAsset, insertAtSeconds:Double, repeatTimeRange:YGCTimeRange, repeatCount:Int) throws -> AVMutableComposition {
