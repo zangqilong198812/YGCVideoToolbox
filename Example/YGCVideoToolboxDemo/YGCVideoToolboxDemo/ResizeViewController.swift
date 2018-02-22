@@ -11,7 +11,7 @@ import AVFoundation
 
 class ResizeViewController: UIViewController {
 
-  var composition:AVMutableVideoComposition!
+  var result:(AVMutableComposition, AVMutableVideoComposition)!
   var player:AVPlayer!
   var item:AVPlayerItem!
   var playerLayer:AVPlayerLayer!
@@ -22,12 +22,13 @@ class ResizeViewController: UIViewController {
     super.viewDidLoad()
     let path = Bundle.main.path(forResource: "timecount", ofType: "MP4")
     let videoAsset = AVURLAsset(url: URL(fileURLWithPath: path!))
-    composition = try! resideVideo(videoAsset: videoAsset, targetSize: CGSize(width: 500, height: 500), isKeepAspectRatio: true, isCutBlackEdge: true)
-    item = AVPlayerItem(asset: videoAsset)
-    item.videoComposition = composition
+    result = try! resizeVideo(videoAsset: videoAsset, targetSize: CGSize(width: 300, height: 300), isKeepAspectRatio: true, isCutBlackEdge: false)
+    item = AVPlayerItem(asset: result.0)
+    item.videoComposition = result.1
     player = AVPlayer(playerItem: item)
     playerLayer = AVPlayerLayer.init(player: player)
     playerLayer.frame = self.view.bounds
+    playerLayer.videoGravity = AVLayerVideoGravity.resizeAspect;
     self.view.layer.addSublayer(playerLayer)
 
     playButton.setTitle("PlayVideo", for: .normal)
@@ -47,5 +48,16 @@ class ResizeViewController: UIViewController {
   @objc func playVideo() {
     player.seek(to: kCMTimeZero)
     player.play()
+
+    let tmp = NSTemporaryDirectory()
+
+    print(tmp)
+    exportVideo(outputPath: "\(tmp)test.mp4", asset: result.0, videoComposition: result.1) { (success) in
+      if success {
+        print("success")
+      }else {
+        print("error")
+      }
+    }
   }
 }

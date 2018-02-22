@@ -13,6 +13,7 @@ class ListTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "Demo"
+   // self.navigationController?.isNavigationBarHidden = true
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = false
 

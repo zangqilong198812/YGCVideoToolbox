@@ -32,8 +32,42 @@ A series of video tools base on AVFoundation framework.
 - [ ] Add text on video
 
 ## Usage
+### Slowmotion
+
+```
+ let videoAsset = AVURLAsset(url: URL(fileURLWithPath: path!))
+    composition = try! slowMotion(videoAsset: videoAsset, slowTimeRange: YGCTimeRange.secondsRange(2, 4), slowMotionRate: 8)
+```
+
+it means I want to slow motion the 2s - 4s, and I want to make it slow to 1/8 speed.
+
+### Repeat 
+
+```
+let videoAsset = AVURLAsset(url: URL(fileURLWithPath: path!))
+    composition = try! repeatVideo(videoAsset: videoAsset, insertAtSeconds: 2, repeatTimeRange: YGCTimeRange.secondsRange(2, 4), repeatCount: 2)
+```
+
+the demo code means i will repeat the 2s - 4s video segment, and I want to repeat twice.
+
+### Resize
 
 
+```
+let videoAsset = AVURLAsset(url: URL(fileURLWithPath: path!))
+    result = try! resizeVideo(videoAsset: videoAsset, targetSize: CGSize(width: 300, height: 300), isKeepAspectRatio: true, isCutBlackEdge: false)
+```
+
+the demo code means I want to resize the video size to (300, 300). and I want to the video scale AspectFit. and Want to the black edge.
+
+### Cut Video
+
+```
+let videoAsset = AVURLAsset(url: URL(fileURLWithPath: path!))
+    composition = try! cutTime(videoAsset: videoAsset, cutTimeRange: YGCTimeRange.secondsRange(2, 4))
+```
+
+the demo code means I want the 2s - 4s time range video. And crop it to me .
 ## Installing
 
 #### Cocoapods

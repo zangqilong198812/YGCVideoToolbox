@@ -98,7 +98,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="c2Z-w1-8En" kind="show" trigger="accessoryAction" id="IDj-7M-Rcj"/>
+                                            <segue destination="c2Z-w1-8En" kind="show" id="Oa3-9I-lKj"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>

@@ -47,6 +47,8 @@ class CutTimeViewController: UIViewController {
   @objc func playVideo() {
     player.seek(to: kCMTimeZero)
     player.play()
+
+    
   }
 
 }

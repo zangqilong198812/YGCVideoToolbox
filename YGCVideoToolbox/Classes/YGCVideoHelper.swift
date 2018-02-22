@@ -90,7 +90,14 @@ public func videoCompositionInstructionForTrack(track: AVCompositionTrack, video
   return instruction
 }
 
-public func exportVideo(outputPath:String, asset:AVAsset) {
+public func exportVideo(outputPath:String, asset:AVAsset, videoComposition:AVMutableVideoComposition?, complete:@escaping ((Bool) -> Void)) {
+  if FileManager.default.fileExists(atPath: outputPath) {
+    do {
+      try FileManager.default.removeItem(atPath: outputPath)
+    } catch {
+      print("remove file failed")
+    }
+  }
   let outputURL = URL(fileURLWithPath: outputPath)
   guard let exporter = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality) else{
     print("generate export failed")
@@ -99,11 +106,14 @@ public func exportVideo(outputPath:String, asset:AVAsset) {
   exporter.outputURL = outputURL
   exporter.outputFileType = AVFileType.mp4
   exporter.shouldOptimizeForNetworkUse = false
+  if let composition = videoComposition {
+    exporter.videoComposition = composition
+  }
   exporter.exportAsynchronously(completionHandler: {
     if exporter.status == .completed {
-
+      complete(true)
     }else {
-
+      complete(false)
     }
   })
 }

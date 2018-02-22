@@ -9,34 +9,32 @@
 import UIKit
 import AVFoundation
 
-public func resideVideo(videoAsset:AVURLAsset,
+public func resizeVideo(videoAsset:AVURLAsset,
                         targetSize:CGSize,
-                        timeRange:YGCTimeRange = .naturalRange,
                         isKeepAspectRatio:Bool,
-                        isCutBlackEdge:Bool) throws -> AVMutableVideoComposition
+                        isCutBlackEdge:Bool) throws -> (AVMutableComposition, AVMutableVideoComposition)
 {
   guard let videoTrack = videoAsset.tracks(withMediaType: AVMediaType.video).first else{
     throw YGCVideoError.videoTrackNotFind
   }
 
-  guard timeRange.validateTime(videoTime: videoAsset.duration) else {
-    throw YGCVideoError.timeSetNotCorrect
+  guard let audioTrack = videoAsset.tracks(withMediaType: AVMediaType.audio).first else {
+    throw YGCVideoError.audioTrackNotFind
   }
 
-  let videoTimeScale = videoAsset.duration.timescale
-  let beginTime:CMTime
-  let cropTimeRange:CMTimeRange
-  switch timeRange {
-  case .naturalRange:
-    cropTimeRange = CMTimeRangeMake(kCMTimeZero, videoAsset.duration)
-    beginTime = kCMTimeZero
-  case .secondsRange(let begin, let end):
-    beginTime = CMTimeMake(Int64(Double(videoTimeScale) * begin), videoTimeScale)
-    cropTimeRange = CMTimeRangeMake(beginTime, CMTimeMake(Int64(Double(videoTimeScale) * end), videoTimeScale))
-  case .cmtimeRange(let begin, let end):
-    beginTime = begin
-    cropTimeRange = CMTimeRangeMake(begin, end)
+  let resizeComposition = AVMutableComposition(urlAssetInitializationOptions: nil)
+  guard let compositionVideoTrack = resizeComposition.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: kCMPersistentTrackID_Invalid) else {
+    throw YGCVideoError.compositionTrackInitFailed
   }
+  guard let compostiionAudioTrack = resizeComposition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid) else {
+    throw YGCVideoError.compositionTrackInitFailed
+  }
+
+  try compositionVideoTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration), of: videoTrack, at: kCMTimeZero)
+  try compostiionAudioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration), of: audioTrack , at: kCMTimeZero)
+
+  let videoTimeScale = videoAsset.duration.timescale
+  let timeRange = videoAsset.duration
 
   let originTransform = videoTrack.preferredTransform
   let info = orientationFromTransform(transform: originTransform)
@@ -59,7 +57,7 @@ public func resideVideo(videoAsset:AVURLAsset,
   }
 
   let mainInstruction = AVMutableVideoCompositionInstruction()
-  mainInstruction.timeRange = cropTimeRange
+  mainInstruction.timeRange = CMTimeRange(start: kCMTimeZero, end: videoAsset.duration)
   let layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
 
   let finalTransform:CGAffineTransform
@@ -78,7 +76,7 @@ public func resideVideo(videoAsset:AVURLAsset,
     }
 
   }
-  layerInstruction.setTransform(finalTransform, at: beginTime)
+  layerInstruction.setTransform(finalTransform, at: kCMTimeZero)
   mainInstruction.layerInstructions = [layerInstruction]
 
   let videoComposition = AVMutableVideoComposition()
@@ -91,5 +89,5 @@ public func resideVideo(videoAsset:AVURLAsset,
 
   videoComposition.instructions = [mainInstruction]
 
-  return videoComposition
+  return (resizeComposition, videoComposition)
 }
