@@ -20,9 +20,9 @@ class SlowMotionViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    let path = Bundle.main.path(forResource: "timecount", ofType: "MP4")
+    let path = Bundle.main.path(forResource: "cat", ofType: "MOV")
     let videoAsset = AVURLAsset(url: URL(fileURLWithPath: path!))
-    composition = try! slowMotion(videoAsset: videoAsset, slowTimeRange: YGCTimeRange.secondsRange(2, 4), slowMotionRate: 8)
+    composition = try! slowMotion(videoAsset: videoAsset, slowTimeRange: YGCTimeRange.secondsRange(1, 4), slowMotionRate: 8)
     print("video range is \(CMTimeGetSeconds(composition.duration))")
     item = AVPlayerItem(asset: composition)
     player = AVPlayer(playerItem: item)

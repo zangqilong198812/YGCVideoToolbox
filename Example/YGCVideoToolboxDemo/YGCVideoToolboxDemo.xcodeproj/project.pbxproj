@@ -25,6 +25,7 @@
 		50BB1E1E203EA9FB008C11EB /* RepeatSegmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB1E1D203EA9FB008C11EB /* RepeatSegmentViewController.swift */; };
 		50BB1E20203EAA04008C11EB /* ResizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB1E1F203EAA04008C11EB /* ResizeViewController.swift */; };
 		50BB1E22203EAA14008C11EB /* CutTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB1E21203EAA14008C11EB /* CutTimeViewController.swift */; };
+		50BB1E25203EBB1E008C11EB /* cat.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 50BB1E24203EBB1E008C11EB /* cat.MOV */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		50BB1E1D203EA9FB008C11EB /* RepeatSegmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatSegmentViewController.swift; sourceTree = "<group>"; };
 		50BB1E1F203EAA04008C11EB /* ResizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeViewController.swift; sourceTree = "<group>"; };
 		50BB1E21203EAA14008C11EB /* CutTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CutTimeViewController.swift; sourceTree = "<group>"; };
+		50BB1E24203EBB1E008C11EB /* cat.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = cat.MOV; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		50BB1DD7203EA8BF008C11EB /* YGCVideoToolboxDemo */ = {
 			isa = PBXGroup;
 			children = (
+				50BB1E24203EBB1E008C11EB /* cat.MOV */,
 				50BB1E19203EA9D1008C11EB /* timecount.MP4 */,
 				50BB1E06203EA8D9008C11EB /* YGCVideoToolbox */,
 				50BB1DD8203EA8BF008C11EB /* AppDelegate.swift */,
@@ -293,6 +296,7 @@
 				50BB1DE3203EA8C0008C11EB /* LaunchScreen.storyboard in Resources */,
 				50BB1DE0203EA8C0008C11EB /* Assets.xcassets in Resources */,
 				50BB1E1A203EA9D1008C11EB /* timecount.MP4 in Resources */,
+				50BB1E25203EBB1E008C11EB /* cat.MOV in Resources */,
 				50BB1DDE203EA8BF008C11EB /* Main.storyboard in Resources */,
 				50BB1E10203EA8D9008C11EB /* .gitkeep in Resources */,
 			);
