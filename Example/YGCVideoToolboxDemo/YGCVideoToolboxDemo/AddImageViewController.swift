@@ -63,7 +63,7 @@ class AddImageViewController: UIViewController {
     progressView.startAnimating()
     let tmp = NSTemporaryDirectory()
     let filePath = "\(tmp)test.mp4"
-    exportVideo(outputPath: filePath, asset: result.0, videoComposition: result.1) { (success) in
+    exportVideo(outputPath: filePath, asset: result.0, videoComposition: result.1, fileType: AVFileType.mp4) { (success) in
       DispatchQueue.main.async {
         self.progressView.stopAnimating()
         if success {
@@ -73,7 +73,6 @@ class AddImageViewController: UIViewController {
           print("error")
         }
       }
-
     }
   }
 

@@ -28,7 +28,7 @@ class AddTextViewController: UIViewController {
     textLayer.foregroundColor = UIColor.red.cgColor
     textLayer.string = "Yegucheng"
 
-    result = try! addTextForVideo(videoAsset: videoAsset, textLayer: textLayer, textRect: CGRect(x: 100, y: 100, width: 200, height: 50))
+    result = try! addTextForVideo(videoAsset: videoAsset, text: "Hi, everyone", fontName: "Helvetica-Bold", fontSize: 36, fontColor: UIColor.red, textRect: CGRect(x: 100, y: 100, width: 200, height: 40))
 
     playButton.setTitle("PlayVideo", for: .normal)
     playButton.setTitleColor(UIColor.blue, for: .normal)
@@ -68,7 +68,7 @@ class AddTextViewController: UIViewController {
     progressView.startAnimating()
     let tmp = NSTemporaryDirectory()
     let filePath = "\(tmp)test.mp4"
-    exportVideo(outputPath: filePath, asset: result.0, videoComposition: result.1) { (success) in
+    exportVideo(outputPath: filePath, asset: result.0, videoComposition: result.1, fileType: AVFileType.mov) { (success) in
       DispatchQueue.main.async {
         self.progressView.stopAnimating()
         if success {
@@ -78,7 +78,6 @@ class AddTextViewController: UIViewController {
           print("error")
         }
       }
-
     }
   }
 

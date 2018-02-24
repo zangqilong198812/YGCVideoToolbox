@@ -16,7 +16,10 @@ import UIKit
  */
 
 public func addTextForVideo(videoAsset:AVURLAsset,
-                            textLayer:CATextLayer,
+                            text:String
+                            fontName:String,
+                            fontSize:CGFloat,
+                            fontColor:UIColor,
                              textRect:CGRect) throws -> (AVMutableComposition, AVMutableVideoComposition) {
   guard let videoTrack = videoAsset.tracks(withMediaType: AVMediaType.video).first else{
     throw YGCVideoError.videoTrackNotFind
@@ -44,11 +47,14 @@ public func addTextForVideo(videoAsset:AVURLAsset,
   layerInstruction.setTransform(videoTrack.preferredTransform, at: kCMTimeZero)
   mainInstruction.layerInstructions = [layerInstruction]
 
+  let textLayer = CATextLayer()
+  textLayer.font = CTFontCreateWithName(fontName as CFString, 36, nil)
+  textLayer.foregroundColor = fontColor.cgColor
+  textLayer.string = text
   textLayer.frame = CGRect(x: textRect.minX, y: videoTrack.naturalSize.height - textRect.maxY, width: textRect.width, height: textRect.height)
   let overlayer = CALayer()
   overlayer.frame = CGRect(origin: CGPoint.zero, size: videoTrack.naturalSize)
   overlayer.masksToBounds = true
-
   overlayer.addSublayer(textLayer)
 
   let parentLayer = CALayer()

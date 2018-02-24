@@ -90,7 +90,7 @@ public func videoCompositionInstructionForTrack(track: AVCompositionTrack, video
   return instruction
 }
 
-public func exportVideo(outputPath:String, asset:AVAsset, videoComposition:AVMutableVideoComposition?, complete:@escaping ((Bool) -> Void)) {
+public func exportVideo(outputPath:String, asset:AVAsset, videoComposition:AVMutableVideoComposition?, fileType:AVFileType = AVFileType.mp4, complete:@escaping ((Bool) -> Void)) {
   if FileManager.default.fileExists(atPath: outputPath) {
     do {
       try FileManager.default.removeItem(atPath: outputPath)
@@ -104,7 +104,7 @@ public func exportVideo(outputPath:String, asset:AVAsset, videoComposition:AVMut
     return
   }
   exporter.outputURL = outputURL
-  exporter.outputFileType = AVFileType.mp4
+  exporter.outputFileType = fileType
   exporter.shouldOptimizeForNetworkUse = false
   if let composition = videoComposition {
     exporter.videoComposition = composition

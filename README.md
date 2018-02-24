@@ -23,13 +23,13 @@ A series of video tools base on AVFoundation framework.
 - [x] Reverse a video
 - [x] Slow motion video
 - [x] Repeat a video segment
+- [x] Add image on video
+- [x] Add text on video
 - [x] Pure Swift 4.
 
 ### Todo
 - [ ] Add CoreImage filter to a video file
-- [ ] Add image on video
 - [ ] Add gif on video
-- [ ] Add text on video
 
 ## Usage
 This is the original video.  
