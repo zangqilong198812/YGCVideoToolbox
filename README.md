@@ -32,6 +32,8 @@ A series of video tools base on AVFoundation framework.
 - [ ] Add text on video
 
 ## Usage
+This is the original video.  
+![](https://ws4.sinaimg.cn/large/006tNc79ly1foq37le2hog30b70juhdw.gif)
 ### Slowmotion
 
 ```
@@ -40,6 +42,8 @@ A series of video tools base on AVFoundation framework.
 ```
 
 it means I want to slow motion the 2s - 4s, and I want to make it slow to 1/8 speed.
+This is the slowmotion video.
+![](https://ws3.sinaimg.cn/large/006tNc79ly1foq38erllrg30d60oyqv6.gif)
 
 ### Repeat 
 
@@ -48,7 +52,9 @@ let videoAsset = AVURLAsset(url: URL(fileURLWithPath: path!))
     composition = try! repeatVideo(videoAsset: videoAsset, insertAtSeconds: 2, repeatTimeRange: YGCTimeRange.secondsRange(2, 4), repeatCount: 2)
 ```
 
-the demo code means i will repeat the 2s - 4s video segment, and I want to repeat twice.
+the demo code means i will repeat the 2s - 4s video segment, and I want to repeat twice.  
+This is the repeat video.
+![](https://ws4.sinaimg.cn/large/006tNc79ly1foq38x0kmyg30d60oyx6r.gif)
 
 ### Resize
 
