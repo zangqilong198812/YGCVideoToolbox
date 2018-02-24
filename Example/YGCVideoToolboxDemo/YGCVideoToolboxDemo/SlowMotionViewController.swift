@@ -27,7 +27,7 @@ class SlowMotionViewController: UIViewController {
     item = AVPlayerItem(asset: composition)
     player = AVPlayer(playerItem: item)
     playerLayer = AVPlayerLayer.init(player: player)
-    playerLayer.frame = self.view.bounds
+    playerLayer.frame = CGRect(x: 0, y: 64, width: self.view.bounds.width, height: self.view.bounds.height - 128)
     self.view.layer.addSublayer(playerLayer)
 
     playButton.setTitle("PlayVideo", for: .normal)

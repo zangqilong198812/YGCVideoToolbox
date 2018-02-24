@@ -27,7 +27,7 @@ class ResizeViewController: UIViewController {
     item.videoComposition = result.1
     player = AVPlayer(playerItem: item)
     playerLayer = AVPlayerLayer.init(player: player)
-    playerLayer.frame = self.view.bounds
+    playerLayer.frame = CGRect(x: 0, y: 64, width: self.view.bounds.width, height: self.view.bounds.height - 128)
     playerLayer.videoGravity = AVLayerVideoGravity.resizeAspect;
     self.view.layer.addSublayer(playerLayer)
 

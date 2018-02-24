@@ -33,9 +33,6 @@ public func resizeVideo(videoAsset:AVURLAsset,
   try compositionVideoTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration), of: videoTrack, at: kCMTimeZero)
   try compostiionAudioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration), of: audioTrack , at: kCMTimeZero)
 
-  let videoTimeScale = videoAsset.duration.timescale
-  let timeRange = videoAsset.duration
-
   let originTransform = videoTrack.preferredTransform
   let info = orientationFromTransform(transform: originTransform)
   let videoNaturaSize:CGSize

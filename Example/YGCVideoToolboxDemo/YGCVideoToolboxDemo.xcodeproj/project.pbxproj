@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50258F5A20410EAA00428F22 /* YGCAddImageForVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50258F5920410EAA00428F22 /* YGCAddImageForVideo.swift */; };
+		50258F5C204123B600428F22 /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50258F5B204123B600428F22 /* AddImageViewController.swift */; };
+		50258F5E2041244F00428F22 /* tiger.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 50258F5D2041244E00428F22 /* tiger.jpeg */; };
+		50258F6020412CEB00428F22 /* YGCAddTextOnVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50258F5F20412CEB00428F22 /* YGCAddTextOnVideo.swift */; };
+		50258F6220412E2E00428F22 /* AddTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50258F6120412E2E00428F22 /* AddTextViewController.swift */; };
 		50BB1DD9203EA8BF008C11EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB1DD8203EA8BF008C11EB /* AppDelegate.swift */; };
 		50BB1DDE203EA8BF008C11EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50BB1DDC203EA8BF008C11EB /* Main.storyboard */; };
 		50BB1DE0203EA8C0008C11EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50BB1DDF203EA8C0008C11EB /* Assets.xcassets */; };
@@ -46,6 +51,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		50258F5920410EAA00428F22 /* YGCAddImageForVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YGCAddImageForVideo.swift; sourceTree = "<group>"; };
+		50258F5B204123B600428F22 /* AddImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
+		50258F5D2041244E00428F22 /* tiger.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tiger.jpeg; sourceTree = "<group>"; };
+		50258F5F20412CEB00428F22 /* YGCAddTextOnVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YGCAddTextOnVideo.swift; sourceTree = "<group>"; };
+		50258F6120412E2E00428F22 /* AddTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTextViewController.swift; sourceTree = "<group>"; };
 		50BB1DD5203EA8BF008C11EB /* YGCVideoToolboxDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YGCVideoToolboxDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50BB1DD8203EA8BF008C11EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50BB1DDD203EA8BF008C11EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +131,7 @@
 		50BB1DD7203EA8BF008C11EB /* YGCVideoToolboxDemo */ = {
 			isa = PBXGroup;
 			children = (
+				50258F5D2041244E00428F22 /* tiger.jpeg */,
 				50BB1E24203EBB1E008C11EB /* cat.MOV */,
 				50BB1E19203EA9D1008C11EB /* timecount.MP4 */,
 				50BB1E06203EA8D9008C11EB /* YGCVideoToolbox */,
@@ -130,6 +141,8 @@
 				50BB1E1D203EA9FB008C11EB /* RepeatSegmentViewController.swift */,
 				50BB1E1F203EAA04008C11EB /* ResizeViewController.swift */,
 				50BB1E21203EAA14008C11EB /* CutTimeViewController.swift */,
+				50258F5B204123B600428F22 /* AddImageViewController.swift */,
+				50258F6120412E2E00428F22 /* AddTextViewController.swift */,
 				50BB1DDC203EA8BF008C11EB /* Main.storyboard */,
 				50BB1DDF203EA8C0008C11EB /* Assets.xcassets */,
 				50BB1DE1203EA8C0008C11EB /* LaunchScreen.storyboard */,
@@ -182,6 +195,8 @@
 				50BB1E0D203EA8D9008C11EB /* YGCResizeVideo.swift */,
 				50BB1E0E203EA8D9008C11EB /* YGCSlowMotion.swift */,
 				50BB1E0F203EA8D9008C11EB /* YGCVideoHelper.swift */,
+				50258F5920410EAA00428F22 /* YGCAddImageForVideo.swift */,
+				50258F5F20412CEB00428F22 /* YGCAddTextOnVideo.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -298,6 +313,7 @@
 				50BB1E1A203EA9D1008C11EB /* timecount.MP4 in Resources */,
 				50BB1E25203EBB1E008C11EB /* cat.MOV in Resources */,
 				50BB1DDE203EA8BF008C11EB /* Main.storyboard in Resources */,
+				50258F5E2041244F00428F22 /* tiger.jpeg in Resources */,
 				50BB1E10203EA8D9008C11EB /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,12 +344,16 @@
 				50BB1E22203EAA14008C11EB /* CutTimeViewController.swift in Sources */,
 				50BB1E16203EA8D9008C11EB /* YGCVideoHelper.swift in Sources */,
 				50BB1E1C203EA9ED008C11EB /* SlowMotionViewController.swift in Sources */,
+				50258F5A20410EAA00428F22 /* YGCAddImageForVideo.swift in Sources */,
 				50BB1E20203EAA04008C11EB /* ResizeViewController.swift in Sources */,
 				50BB1E14203EA8D9008C11EB /* YGCResizeVideo.swift in Sources */,
+				50258F6220412E2E00428F22 /* AddTextViewController.swift in Sources */,
 				50BB1E12203EA8D9008C11EB /* YGCCutVideoTime.swift in Sources */,
 				50BB1E1E203EA9FB008C11EB /* RepeatSegmentViewController.swift in Sources */,
 				50BB1DD9203EA8BF008C11EB /* AppDelegate.swift in Sources */,
 				50BB1E18203EA997008C11EB /* ListTableViewController.swift in Sources */,
+				50258F5C204123B600428F22 /* AddImageViewController.swift in Sources */,
+				50258F6020412CEB00428F22 /* YGCAddTextOnVideo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
