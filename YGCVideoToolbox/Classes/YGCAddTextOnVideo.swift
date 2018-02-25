@@ -12,11 +12,11 @@ import UIKit
 
 /*
  Notice:
- Add Image use the AVVideoCompositionCoreAnimationTool, so you can't use AVPlayer play the composition with a videoCompositon, you have to export then play it.
+ Add text use the AVVideoCompositionCoreAnimationTool, so you can't use AVPlayer play the composition with a videoCompositon, you have to export then play it.
  */
 
 public func addTextForVideo(videoAsset:AVURLAsset,
-                            text:String
+                            text:String,
                             fontName:String,
                             fontSize:CGFloat,
                             fontColor:UIColor,
@@ -48,7 +48,7 @@ public func addTextForVideo(videoAsset:AVURLAsset,
   mainInstruction.layerInstructions = [layerInstruction]
 
   let textLayer = CATextLayer()
-  textLayer.font = CTFontCreateWithName(fontName as CFString, 36, nil)
+  textLayer.font = CTFontCreateWithName(fontName as CFString, fontSize, nil)
   textLayer.foregroundColor = fontColor.cgColor
   textLayer.string = text
   textLayer.frame = CGRect(x: textRect.minX, y: videoTrack.naturalSize.height - textRect.maxY, width: textRect.width, height: textRect.height)
