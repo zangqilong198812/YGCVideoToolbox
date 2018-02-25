@@ -12,7 +12,7 @@ import UIKit
 
 /*
  Notice:
- Add Image use the AVVideoCompositionCoreAnimationTool, so you can't use AVPlayer play the composition with a videoCompositon, you have to export then play it.
+ Add text use the AVVideoCompositionCoreAnimationTool, so you can't use AVPlayer play the composition with a videoCompositon, you have to export then play it.
  */
 
 public func addTextForVideo(videoAsset:AVURLAsset,
