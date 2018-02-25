@@ -20,7 +20,6 @@ A series of video tools base on AVFoundation framework.
 ### Features
 - [x] Resize video
 - [x] Crop video by timerange
-- [x] Reverse a video
 - [x] Slow motion video
 - [x] Repeat a video segment
 - [x] Add image on video
@@ -30,6 +29,7 @@ A series of video tools base on AVFoundation framework.
 ### Todo
 - [ ] Add CoreImage filter to a video file
 - [ ] Add gif on video
+- [ ] Reverse a video
 
 ## Usage
 This is the original video.  
