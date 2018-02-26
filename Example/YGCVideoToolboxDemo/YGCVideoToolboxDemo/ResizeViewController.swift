@@ -13,25 +13,20 @@ class ResizeViewController: UIViewController {
 
   var result:(AVMutableComposition, AVMutableVideoComposition)!
   var player:AVPlayer!
-  var item:AVPlayerItem!
+  var item:AVPlayerItem?
   var playerLayer:AVPlayerLayer!
 
   var playButton = UIButton(type: .custom)
+  let progressView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    let path = Bundle.main.path(forResource: "timecount", ofType: "MP4")
+    let path = Bundle.main.path(forResource: "cat", ofType: "MOV")
     let videoAsset = AVURLAsset(url: URL(fileURLWithPath: path!))
     result = try! resizeVideo(videoAsset: videoAsset, targetSize: CGSize(width: 300, height: 300), isKeepAspectRatio: true, isCutBlackEdge: false)
-    item = AVPlayerItem(asset: result.0)
-    item.videoComposition = result.1
-    player = AVPlayer(playerItem: item)
-    playerLayer = AVPlayerLayer.init(player: player)
-    playerLayer.frame = CGRect(x: 0, y: 64, width: self.view.bounds.width, height: self.view.bounds.height - 128)
-    playerLayer.videoGravity = AVLayerVideoGravity.resizeAspect;
-    self.view.layer.addSublayer(playerLayer)
 
     playButton.setTitle("PlayVideo", for: .normal)
+    playButton.setTitleColor(UIColor.blue, for: .normal)
     playButton.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
     playButton.center = CGPoint(x: self.view.center.x, y: self.view.bounds.height - 60)
     playButton.addTarget(self, action: #selector(playVideo), for: .touchUpInside)
@@ -45,18 +40,36 @@ class ResizeViewController: UIViewController {
   }
 
 
+  func initilizePlayer(url:URL) {
+    item = AVPlayerItem(url: url)
+    player = AVPlayer(playerItem: item)
+    playerLayer = AVPlayerLayer.init(player: player)
+    playerLayer.frame = CGRect(x: 0, y: 64, width: self.view.bounds.width, height: self.view.bounds.height - 128)
+    playerLayer.videoGravity = AVLayerVideoGravity.resizeAspect;
+    self.view.layer.addSublayer(playerLayer)
+
+    self.view.bringSubview(toFront: playButton)
+  }
+
   @objc func playVideo() {
-    player.seek(to: kCMTimeZero)
-    player.play()
+    if let _ = self.item {
+      player.seek(to: kCMTimeZero)
+      player.play()
+      return
+    }
 
+    progressView.startAnimating()
     let tmp = NSTemporaryDirectory()
-
-    print(tmp)
-    exportVideo(outputPath: "\(tmp)test.mp4", asset: result.0, videoComposition: result.1) { (success) in
-      if success {
-        print("success")
-      }else {
-        print("error")
+    let filePath = "\(tmp)test.mov"
+    exportVideo(outputPath: filePath, asset: result.0, videoComposition: result.1, fileType: AVFileType.mov) { (success) in
+      DispatchQueue.main.async {
+        self.progressView.stopAnimating()
+        if success {
+          print("success")
+          self.initilizePlayer(url: URL(fileURLWithPath: filePath))
+        }else {
+          print("error")
+        }
       }
     }
   }

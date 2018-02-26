@@ -48,12 +48,16 @@ public func addImageForVideo(videoAsset:AVURLAsset,
   imageLayer.contents = image.cgImage!
   imageLayer.frame = CGRect(x: 0, y: videoTrack.naturalSize.height - imageRect.maxY, width: imageRect.width, height: imageRect.height)
 
+  let overlayLayer = CALayer()
+  overlayLayer.frame = CGRect(origin: CGPoint.zero, size: videoTrack.naturalSize)
+  overlayLayer.addSublayer(imageLayer)
+
   let parentLayer = CALayer()
   let videoLayer = CALayer()
   parentLayer.frame = CGRect(origin: CGPoint.zero, size: videoTrack.naturalSize)
   videoLayer.frame = CGRect(origin: CGPoint.zero, size: videoTrack.naturalSize)
   parentLayer.addSublayer(videoLayer)
-  parentLayer.addSublayer(imageLayer)
+  parentLayer.addSublayer(overlayLayer)
 
   videoComposition.renderSize = videoTrack.naturalSize
   videoComposition.frameDuration = CMTimeMake(1, 30)

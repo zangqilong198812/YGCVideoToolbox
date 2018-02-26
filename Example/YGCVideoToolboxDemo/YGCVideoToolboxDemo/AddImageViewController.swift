@@ -21,7 +21,7 @@ class AddImageViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    let path = Bundle.main.path(forResource: "timecount", ofType: "MP4")
+    let path = Bundle.main.path(forResource: "test", ofType: "MOV")
     let videoAsset = AVURLAsset(url: URL(fileURLWithPath: path!))
     result = try! addImageForVideo(videoAsset: videoAsset, image: UIImage(named: "tiger.jpeg")!, imageRect: CGRect(x: 100, y: 100, width: 200, height: 200))
 
@@ -62,8 +62,8 @@ class AddImageViewController: UIViewController {
 
     progressView.startAnimating()
     let tmp = NSTemporaryDirectory()
-    let filePath = "\(tmp)test.mp4"
-    exportVideo(outputPath: filePath, asset: result.0, videoComposition: result.1, fileType: AVFileType.mp4) { (success) in
+    let filePath = "\(tmp)test.mov"
+    exportVideo(outputPath: filePath, asset: result.0, videoComposition: nil, fileType: AVFileType.mov) { (success) in
       DispatchQueue.main.async {
         self.progressView.stopAnimating()
         if success {
